@@ -1,0 +1,77 @@
+.df{
+    display: flex;
+}
+
+.fr {
+    flex-direction: row;
+}
+
+.fc{
+    flex-direction: column;
+}
+
+.ff{
+    flex:1 1 auto;
+}
+
+.jcc{
+    justify-content: center;
+}
+
+.jcfe{
+    justify-content : flex-end;
+}
+
+.jcs{
+    justify-content: start;
+}
+.jca{
+    justify-content: space-around;
+}
+.jcb{
+    justify-content: space-between;
+}
+
+.jce{
+    justify-content: space-evenly;
+}
+
+.aic{
+    align-items: center;
+}
+
+.aise{
+    align-items: self-end;
+}
+
+.aib{
+    align-items: baseline;
+}
+
+.aise{
+    align-items: self-end;
+}
+
+.ais{ 
+    align-items : start;
+}
+.tac{
+    text-align: center;
+}
+
+.tae{
+    text-align: end;
+}
+
+.asc{
+    align-self: center;
+}
+
+.dnone{
+    display: none;
+}
+
+
+.dBlock{
+    display: block;
+}
