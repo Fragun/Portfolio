@@ -1,0 +1,17 @@
+.containerAboutme{
+    width: 50%;
+    padding-top: 20px;
+    margin: auto;
+    font-family: var(--font-family2);
+    line-height: 1.8;
+
+    .buttonCv {
+        cursor: pointer;
+        color: var(--primary);
+    
+        &:hover {
+            transform: rotate(20deg);
+            color: var(--secundary);  // Couleur du texte au survol
+        }
+    }
+}

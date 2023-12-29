@@ -1,0 +1,32 @@
+{
+  "about": "ABOUT ME",
+  "contact": "CONTACT",
+  "personalResume": "RESUME",
+  "training": "TRAINING",
+  "works": "WORK",
+
+  "presentation": "Hi, I'm ",
+  "presentationName":"DAVID DETHOOR",
+  "presentation2": "Full-Stack Developer",
+
+  "aboutMe": "About me",
+
+  "p1AboutMe": "Hi, my name is David Dethoor, I am a junior web developer. Following a professional retraining in this exciting field of the web, I obtained my certifications as a web developer. We now need to gain experience, which is why I am already turning to another project.",
+  "p2AboutMe": "As part of my work-study Expert Masters in Software Engineering, I am looking for a company to carry out my apprenticeship contract.",
+  "p3AboutMe": "The training that I am about to follow will allow me to acquire new operational skills useful to carry out the missions that you wish to entrust to me. This apprenticeship contract will allow me to acquire professional skills that can be quickly transferred within your company, but also to build professional experience while contributing to the development of your company.",
+  "p4AboutMe": "My work-study training takes place online according to the following methods:",
+  "p5AboutMe": "Enrollments all year round (possibility of starting the contract at any time)",
+  "p6AboutMe": "An optimized work-study schedule: 4 days in the company / 1 day in training, adapted to the peak periods of your company's activity, or another schedule according to your choice.",
+  "p7AboutMe": "A training program that is flexible in its organization: you determine the order of the modules to follow according to the missions that I will have to carry out.",
+  "p8AboutMe": "In addition, in order to encourage apprenticeship, the State offers hiring assistance of €6,000 thanks to the “1 young person, 1 solution” plan, for companies wishing to hire and support an apprentice. I am eligible given my recognition as a disabled worker.",
+  "p9AboutMe": "You will find my downloadable CV",
+  "p9bisAboutMe": "by clicking here",
+  "p10AboutMe": "I suggest you contact me here to discuss this opportunity.",
+  
+  "trainingTitle" : "TRAINING",
+  
+  "worksTitle" : "WORKS",
+
+  "experiencesTitle" : "EXPERIENCES"
+
+}

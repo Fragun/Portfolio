@@ -1,0 +1,11 @@
+@use "../../../../assets/styles/mixins.scss" as mixin;
+
+.containerExperiences {
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        padding: 140px 0;
+        background-color: var(--bc2);
+        color: var(--primary);
+    }
+}

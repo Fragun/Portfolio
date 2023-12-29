@@ -1,0 +1,80 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.header {
+    padding: 10px 20px;
+    box-shadow: var(--box-shadow);
+    color: var(--primary);
+    background-color: var(--bc);
+    position: fixed;
+    width: 100%;
+
+    &.scrolled {
+        background-color: var(--bc2);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .desktopHeader {
+
+        @include mixin.sm-lt {
+            display: none;
+        }
+
+        .buttonMenu {
+            width: auto;
+            margin: 10px;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+    
+
+            a {
+                text-decoration: none;
+                color: var(--primary);
+
+                &.scrolled {
+                    color: var(--bc);
+                }
+            }
+        }
+
+        a img {
+            cursor: pointer;
+            width: 30px;
+            margin: 5px;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .listIconMobileMenu {
+        font-size: 1.8rem;
+        display: none;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @include mixin.sm-lt {
+            display: flex;
+        }
+    }
+
+    .mobileMenu {
+        @include mixin.md{
+            display: none;
+        }
+        @include mixin.lg{
+            display: none;
+        }
+        @include mixin.xl {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "about": "À PROPOS",
+  "contact": "CONTACTEZ-MOI",
+  "personalResume": "CV",
+  "training": "FORMATIONS",
+  "works": "TRAVAUX",
+
+  "presentation": "Bonjour, je suis",
+  "presentationName":"DAVID DETHOOR,",
+  "presentation2": "Développeur Full-Stack",
+
+  "aboutMe": "À propos de moi",
+
+  "p1AboutMe": "Bonjour, mon nom est David Dethoor, je suis développeur web junior. Suite à une reconversion professionnelle dans ce domaine passionnant qu'est le web, j'ai obtenu mes certifications comme développeur web. Il faut maintenant acquérir de l'expérience, c'est pour cela que je me tourne déjà vers un autre projet.",
+  "p2AboutMe": "Dans le cadre de mon Mastère Expert en Ingénierie Logicielle en alternance, je cherche une entreprise afin d’effectuer mon contrat d’apprentissage.",
+  "p3AboutMe": "La formation que je m'apprête à suivre me permettra d'acquérir de nouvelles compétences opérationnelles utiles pour mener à bien les missions que vous souhaiterez me confier. Ce contrat d’apprentissage me permettra d’acquérir des compétences métier rapidement transférables au sein de votre entreprise, mais également de me forger une expérience professionnelle tout en contribuant au développement de votre entreprise.",
+  "p4AboutMe": "Ma formation en alternance se déroule en ligne selon les modalités suivantes :",
+  "p5AboutMe": "Des rentrées toute l'année (possibilité de faire débuter le contrat à tout moment)",
+  "p6AboutMe": "Un rythme d'alternance optimisé : 4 jours en entreprise / 1 jour en formation, adapté aux temps forts d'activité de votre entreprise, ou un autre rythme selon votre choix",
+  "p7AboutMe": "Un programme de formation modulable dans son organisation : vous déterminez l'ordre des modules à suivre en fonction des missions que je devrai réaliser.",
+  "p8AboutMe": "De plus, afin d’encourager l’apprentissage, l’État propose une aide à l’embauche de 6000€ grâce au plan \"1 jeune, 1 solution\", pour les entreprises souhaitant embaucher et accompagner un apprenti. J'y suis éligible étant donné ma reconnaissance de travailleur handicapé.",
+  "p9AboutMe": "Vous trouverez mon CV téléchargeable",
+  "p9bisAboutMe": "en cliquant ici",
+  "p10AboutMe": "Je vous propose de me recontacter ici afin d’échanger sur cette opportunité.",
+    
+  "trainingTitle" : "FORMATION",
+  
+  "worksTitle" : "TRAVAUX",
+
+  "ExperiencesTitle" : "EXPERIENCES"
+}
