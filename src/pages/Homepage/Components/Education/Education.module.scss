@@ -1,12 +1,24 @@
 @use "../../../../assets/styles/mixins.scss" as mixin;
 
 .containerEducation {
+    .hiddenContainer {
+        display: none;
+    }
+
     h2 {
+        font-family: var(--ff3);
         text-align: center;
         margin-top: 20px;
-        padding: 140px 0;
+        padding: 30px 0;
         background-color: var(--bc2);
         color: var(--primary);
+        cursor: pointer;
+        box-shadow: var(--box-shadow);
+
+        &:hover {
+            rotate: 1deg;
+            font-size: 45px;
+        }
     }
 
     .timelineBox {
@@ -27,6 +39,11 @@
                 position: relative;
                 left: 200px;
             }
+
+            @include mixin.xs {
+                position: relative;
+                left: 100px;
+            }
         }
 
         .circle {
@@ -44,6 +61,10 @@
 
             @include mixin.md-lt {
                 left: calc(50% + 200px);
+            }
+
+            @include mixin.xs {
+                left: calc(50% + 100px);
             }
 
             span {
@@ -77,15 +98,24 @@
             min-height: 200px;
             height: auto;
             box-shadow: var(--box-shadow);
-            padding: 20px;
+            padding: 25px 10px 0 10px;
             border-radius: 3px;
             color: var(--text-color);
             position: absolute;
             left: 50%;
             transform: translate(-50%);
 
+            @include mixin.xs {
+                width: 200px;
+            }
+
             h3 {
                 margin-top: 15px;
+                font-size: 14px;
+
+                @include mixin.xs {
+                    font-size: 12px;
+                }
             }
 
         }
@@ -137,16 +167,21 @@
 
         .box p {
             line-height: 20px;
-            font-size: 18px;
+            font-size: 14px;
             margin: 10px 0 20px 0;
 
+            @include mixin.xs {
+                font-size: 10px;
+                line-height: 17px;
+            }
         }
 
         .date {
             position: absolute;
             margin: 10px;
-            border-radius: 3px;
-            box-shadow: var(--box-shadow);
+            padding: 3px;
+            border-radius: 15px;
+            background-color: var(--bc2);
         }
 
         .d1 {
@@ -155,6 +190,10 @@
 
             @include mixin.md-lt {
                 left: calc(50% - 240px);
+            }
+
+            @include mixin.xs {
+                left: calc(50% - 150px);
             }
         }
 
@@ -165,6 +204,10 @@
             @include mixin.md-lt {
                 left: calc(50% - 240px);
             }
+
+            @include mixin.xs {
+                left: calc(50% - 150px);
+            }
         }
 
         .d3 {
@@ -173,6 +216,10 @@
 
             @include mixin.md-lt {
                 left: calc(50% - 240px);
+            }
+
+            @include mixin.xs {
+                left: calc(50% - 150px);
             }
         }
 
@@ -183,6 +230,10 @@
             @include mixin.md-lt {
                 left: calc(50% - 240px);
             }
+
+            @include mixin.xs {
+                left: calc(50% - 150px);
+            }
         }
 
         .d5 {
@@ -191,6 +242,10 @@
 
             @include mixin.md-lt {
                 left: calc(50% - 240px);
+            }
+
+            @include mixin.xs {
+                left: calc(50% - 150px);
             }
         }
 
@@ -206,6 +261,10 @@
             @include mixin.md-lt {
                 left: calc(50% + 120px);
             }
+
+            @include mixin.xs {
+                left: calc(50% + 20px);
+            }
         }
 
         .s2 {
@@ -215,6 +274,10 @@
 
             @include mixin.md-lt {
                 left: calc(50% + 120px);
+            }
+
+            @include mixin.xs {
+                left: calc(50% + 20px);
             }
         }
 
@@ -226,6 +289,10 @@
             @include mixin.md-lt {
                 left: calc(50% + 120px);
             }
+
+            @include mixin.xs {
+                left: calc(50% + 20px);
+            }
         }
 
         .s4 {
@@ -235,6 +302,10 @@
 
             @include mixin.md-lt {
                 left: calc(50% + 120px);
+            }
+
+            @include mixin.xs {
+                left: calc(50% + 20px);
             }
         }
 
@@ -246,23 +317,29 @@
             @include mixin.md-lt {
                 left: calc(50% + 120px);
             }
+
+            @include mixin.xs {
+                left: calc(50% + 20px);
+            }
         }
     }
-    
+
 
     @keyframes rotate-scale-up {
         0% {
-          transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
         }
+
         50% {
             transform: rotate(0) scale(0.5);
-          }
-        100% {
-          transform: rotate(360deg) scale(1.8);
         }
-      }
-      
-      .fadeInUp {
+
+        100% {
+            transform: rotate(360deg) scale(1.8);
+        }
+    }
+
+    .fadeInUp {
         animation: rotate-scale-up 1s linear;
-      }
+    }
 }

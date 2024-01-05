@@ -54,13 +54,6 @@ export default function Header() {
   return (
     <nav className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <ul className={`${styles.desktopHeader}  df jce aic`}>
-        <li className={`mr10  ${styles.buttonMenu}`}>
-          <ClipboardIcon className={`${styles.customClass}`} component="span">
-            <a href="/#cv" className={`${scrolled ? styles.scrolled : ""}`}>
-              <span> {t("personalResume")}</span>
-            </a>
-          </ClipboardIcon>
-        </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <MaleIcon component="span">
             <a href="/#about" className={`${scrolled ? styles.scrolled : ""}`}>
@@ -71,17 +64,24 @@ export default function Header() {
         <li className={`mr10 ${styles.buttonMenu}`}>
           <GraduationCapIcon component="span">
             <a
-              href="/#studies"
+              href="/#training"
               className={`${scrolled ? styles.scrolled : ""}`}
             >
               <span> {t("training")}</span>
             </a>
           </GraduationCapIcon>
         </li>
+        <li className={`mr10  ${styles.buttonMenu}`}>
+          <ClipboardIcon className={`${styles.customClass}`} component="span">
+            <a href="/#exp" className={`${scrolled ? styles.scrolled : ""}`}>
+              <span> {t("experiences")}</span>
+            </a>
+          </ClipboardIcon>
+        </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
-          <BriefcaseIcon component="span" >
+          <BriefcaseIcon component="span">
             <a
-              href="/#studies"
+              href="/#works"
               className={`${scrolled ? styles.scrolled : ""}`}
             >
               <span> {t("works")}</span>
@@ -91,7 +91,7 @@ export default function Header() {
         <li className={`mr10 ${styles.buttonMenu}`}>
           <EnvelopeIcon component="span">
             <a
-              href="/#studies"
+              href="/#contact"
               className={`${scrolled ? styles.scrolled : ""}`}
             >
               <span> {t("contact")}</span>

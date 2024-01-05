@@ -4,7 +4,6 @@ import useOnScreen from "../../../../components/Hook/useOnScreen";
 import { useTranslation } from "react-i18next";
 
 export default function Education() {
-
   const { t } = useTranslation();
   const boxRef = useRef(null);
   const isBoxVisible = useOnScreen(boxRef);
@@ -25,6 +24,7 @@ export default function Education() {
   const box5Ref = useRef(null);
   const isBox5Visible = useOnScreen(box5Ref);
   const [hasAnimated5, setHasAnimated5] = useState(false);
+  const [hiddenContainer, setHiddenContainer] = useState(false);
 
   const handleAnimation = () => {
     if (isBoxVisible && !hasAnimated) {
@@ -44,6 +44,10 @@ export default function Education() {
     }
   };
 
+  const handleClickTitle = () => {
+    setHiddenContainer(!hiddenContainer)
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", handleAnimation);
     return () => {
@@ -52,9 +56,9 @@ export default function Education() {
   }, [hasAnimated, hasAnimated2, hasAnimated3, hasAnimated4, hasAnimated5]);
 
   return (
-    <div className={`${styles.containerEducation}`}>
-            <h2>{t("trainingTitle")}</h2>
-      <div className={`${styles.timelineBox}`}>
+    <div className={`${styles.containerEducation}`} onClick={() => {handleClickTitle()}}>
+      <h2>{t("trainingTitle")}</h2>
+      <div className={`${styles.timelineBox} ${hiddenContainer ? "" : styles.hiddenContainer}`}>
         <div className={`${styles.line}`}></div>
         <div className={`${styles.circle} ${styles.c1}`}>
           <span
@@ -106,13 +110,22 @@ export default function Education() {
         </div>
         <div className={`${styles.box} ${styles.b1} `}>
           <h3>Mastère Expert en ingénierie logicielle niveau 7 RNCP</h3>
-          <p>Alternance 4/5 jours d'entreprise.</p>
+          <p>
+            Alternance 4/5 jours d'entreprise. Utilisation avancé de github et
+            gitlab · méthodologie scrum · Javascript · Typescript · Angular ·
+            Java, spring · hibernate · docker · kubernetes · Kotlin · API REST
+            avec Spring Boot · SOLID · UML · Java · Scala · noSql · test
+            d’application et machine learning.
+          </p>
         </div>
         <div className={`${styles.box} ${styles.b2}`}>
           <h3>
             Certification Concepteur développeur d'application niveau 6 RNCP
           </h3>
-          <p>React, Express, Node.js, , HTML, CSS, Git, Github, Gitlab, Firebase, Heroku, API Google, Api REST, AWS</p>
+          <p>
+            React · Express · Node.js · HTML · CSS · Git · Github · Gitlab ·
+            Firebase, Heroku · API Google · Api REST · AWS
+          </p>
         </div>
         <div className={`${styles.box} ${styles.b3}`}>
           <h3>Certification développeur web et web mobile niveau 5 RNCP</h3>
@@ -125,25 +138,17 @@ export default function Education() {
         <div className={`${styles.box} ${styles.b4}`}>
           <h3>D.U.T techniques de commercialisation</h3>
           <p>
-            Marketing et Communication, Gestion Commerciale : Compétences en
-            gestion des ventes, analyse des performances commerciales, mise en
+            Marketing et Communication · Gestion Commerciale : Compétences en
+            gestion des ventes · analyse des performances commerciales · mise en
             place de plans d'action pour atteindre les objectifs. Négociation et
-            Vente : Aptitude à négocier, techniques de vente, gestion de la
-            relation client, identification des opportunités commerciales. Droit
-            Commercial : Connaissance des principes juridiques liés au commerce,
-            compréhension des contrats commerciaux, respect des normes légales.
-            Économie : Compréhension des concepts économiques de base, analyse
-            de l'environnement économique impactant les entreprises. Gestion
-            financière Informatique : Découverte de HTML4. Travail en Équipe
+            Vente · techniques de vente · gestion de la relation client · Droit
+            Commercial · économie · gestion financière · Informatique :
+            Découverte de HTML4.
           </p>
         </div>
         <div className={`${styles.box} ${styles.b5}`}>
-          <h3>Mastère Expert en ingénierie logicielle</h3>
-          <p>
-            cillum ad sed non amet consequat magna do laboris proident voluptate
-            enim elit nisi veniam anim. commodo enim nulla enim laborum eu irure
-            mollit Excep
-          </p>
+          <h3>Bac Sciences et techniques de la gestion</h3>
+          <p>Spécialité Marketing</p>
         </div>
 
         <div className={`${styles.date} ${styles.d1}`}>

@@ -6,6 +6,7 @@ import Education from "./Components/Education/Education";
 import Header from "../../components/Header/Header";
 import Experiences from "./Components/Experiences/Experiences";
 import Works from "./Components/Works/Works";
+import Contact from "./Components/Contact/Contact";
 
 export default function Homepage() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export default function Homepage() {
           </div>
           <div className="df jcc aise">
             <img
-              src={photo}
+              src=""
               alt="Profil David Dethoor"
               className={`${styles.imageRounded}`}
             />
@@ -33,16 +34,18 @@ export default function Homepage() {
         <section id="about">
           <AboutMe />
         </section>
-        <section>
+        <section id="training">
           <Education />
         </section>
-        <section>
+        <section id="exp">
           <Experiences />
         </section>
-        <section>
+        <section id="works">
           <Works />
         </section>
-
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
     </>
   );

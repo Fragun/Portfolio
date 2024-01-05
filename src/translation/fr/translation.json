@@ -9,7 +9,7 @@
   "presentationName":"DAVID DETHOOR,",
   "presentation2": "Développeur Full-Stack",
 
-  "aboutMe": "À propos de moi",
+  "aboutMe": "À PROPOS DE MOI",
 
   "p1AboutMe": "Bonjour, mon nom est David Dethoor, je suis développeur web junior. Suite à une reconversion professionnelle dans ce domaine passionnant qu'est le web, j'ai obtenu mes certifications comme développeur web. Il faut maintenant acquérir de l'expérience, c'est pour cela que je me tourne déjà vers un autre projet.",
   "p2AboutMe": "Dans le cadre de mon Mastère Expert en Ingénierie Logicielle en alternance, je cherche une entreprise afin d’effectuer mon contrat d’apprentissage.",
@@ -27,5 +27,7 @@
   
   "worksTitle" : "TRAVAUX",
 
-  "ExperiencesTitle" : "EXPERIENCES"
+  "ExperiencesTitle" : "EXPERIENCES",
+
+  "contactTitle" : "CONTACT"
 }

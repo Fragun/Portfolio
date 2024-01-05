@@ -1,12 +1,26 @@
 @use "../../../../assets/styles/mixins.scss" as mixin;
 
+
 .containerWorks {
+
+    .hiddenContainer {
+        display: none;
+    }
+
     h2 {
         text-align: center;
         margin-top: 20px;
-        padding: 140px 0;
+        padding: 30px 0;
         background-color: var(--bc2);
         color: var(--primary);
+        cursor: pointer;
+        font-family: var(--ff3);
+        box-shadow: var(--box-shadow);
+
+        &:hover {
+            rotate: 1deg;
+            font-size: 45px;
+        }
     }
 
 
@@ -17,6 +31,8 @@
         grid-template-columns: repeat(3, 350px);
         grid-auto-columns: repeat(3, 350px);
         gap: 20px;
+        font-family: var(--ff7);
+        color: var(--secundary);
 
         @include mixin.lg-lt {
             grid-template-columns: repeat(2, 350px);
@@ -33,26 +49,40 @@
             grid-auto-columns: 1fr;
         }
 
-        .elem {
-            border: 1px solid var(--primary);
-            height: 500px;
+        h3 {
+
+            font-size: 30px;
+            @include mixin.xs {
+                font-size: 25px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            @include mixin.xs {
+                font-size: 15px;
+            }
         }
 
         .imageWork {
             width: 300px;
             height: 250px;
-            &:hover{
-                transform: scale(1.5);  
+
+            &:hover {
+                transform: scale(1.5);
             }
         }
 
-        a{
+        a {
             text-decoration: none;
+            color: var(--secundary);
         }
 
-        article{
+        article {
             //border: 1px solid var(--primary);
             box-shadow: var(--box-shadow);
+            border-radius: 20px;
+            padding: 5px;
         }
     }
 }
