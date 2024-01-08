@@ -7,7 +7,6 @@ import {
   faEnvelope,
   faGraduationCap,
   faBriefcase,
-  faAnglesDown,
 } from "@fortawesome/free-solid-svg-icons";
 import en from "../../../assets/image/united-kingdom.png";
 import fr from "../../../assets/image/france.png";

@@ -4,17 +4,21 @@ import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+import Wysiwyg from "./components/Wysiwyg";
 
 export default function Contact() {
   const { t } = useTranslation();
   const [hiddenContainer, setHiddenContainer] = useState(false);
+  const [editorContent, setEditorContent] = useState("");
+  console.log(editorContent);
 
   const schemaYup = Yup.object().shape({
     email: Yup.string()
       .email("Adresse e-mail invalide")
       .required("L'adresse e-mail est requise"),
-    message: Yup.string().required("Le message est requis"),
+      //message: Yup.string().required("Le message est requis"),
+      message: Yup.string().default(() => editorContent),
   });
 
   const initialValues = {
@@ -36,10 +40,12 @@ export default function Contact() {
     try {
       clearErrors();
       console.log(data);
+
       const emailjsParams = {
-        to_email: 'dethoordavid@gmail.com', 
+        to_email: "dethoordavid@gmail.com",
         email: data.email,
         message: data.message,
+        
       };
 
       await emailjs.send(
@@ -49,13 +55,21 @@ export default function Contact() {
         process.env.REACT_APP_USER_ID,
       );
 
-      console.log('E-mail envoyé avec succès');
+      console.log("E-mail envoyé avec succès");
     } catch (error) {
-      console.error('Erreur lors de l\'envoi de l\'e-mail', error);
-      setError('generic', { type: 'generic', message: 'Erreur lors de l\'envoi de l\'e-mail' });
+      console.error("Erreur lors de l'envoi de l'e-mail", error);
+      setError("generic", {
+        type: "generic",
+        message: "Erreur lors de l'envoi de l'e-mail",
+      });
     }
   });
-
+  /**
+   * Fonction pour mettre à jour le contenu de l'éditeur Wysiwyg
+   */
+  const handleEditorChange = (content) => {
+    setEditorContent(content);
+  };
   /**
    * Permet de cacher tout l'onglet contact lors du clique
    *
@@ -86,8 +100,7 @@ export default function Contact() {
             {errors.email && <div>{errors.email.message}</div>}
           </label>
           <label>
-            Message:
-            <textarea {...register("message")} />
+            <Wysiwyg setEditorContent={handleEditorChange} />
             {errors?.message && <div>{errors.message.message}</div>}
           </label>
           <button disabled={isSubmitting}>Envoyer</button>
