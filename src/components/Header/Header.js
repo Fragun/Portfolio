@@ -1,15 +1,16 @@
 import styles from "./Header.module.scss";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  AngleDoubleDownIcon,
-  AngleDoubleUpIcon,
-  BriefcaseIcon,
-  ClipboardIcon,
-  EnvelopeIcon,
-  GraduationCapIcon,
-  MaleIcon,
-} from "react-line-awesome";
+  faCoffee,
+  faHandshake,
+  faEnvelope,
+  faGraduationCap,
+  faBriefcase,
+  faAnglesDown,
+  faAnglesUp,
+} from "@fortawesome/free-solid-svg-icons";
 import en from "../../assets/image/united-kingdom.png";
 import fr from "../../assets/image/france.png";
 import MobileMenu from "./components/MobileMenu";
@@ -55,56 +56,44 @@ export default function Header() {
     <nav className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <ul className={`${styles.desktopHeader}  df jce aic`}>
         <li className={`mr10 ${styles.buttonMenu}`}>
-          <MaleIcon component="span">
-            <a href="/#about" className={`${scrolled ? styles.scrolled : ""}`}>
-              <span> {t("about")}</span>
-            </a>
-          </MaleIcon>
+          <FontAwesomeIcon icon={faCoffee} />
+          <a href="/#about" className={`${scrolled ? styles.scrolled : ""}`}>
+            <span> {t("about")}</span>
+          </a>
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
-          <GraduationCapIcon component="span">
-            <a
-              href="/#training"
-              className={`${scrolled ? styles.scrolled : ""}`}
-            >
-              <span> {t("training")}</span>
-            </a>
-          </GraduationCapIcon>
+          <FontAwesomeIcon icon={faGraduationCap} />
+          <a href="/#training" className={`${scrolled ? styles.scrolled : ""}`}>
+            <span> {t("training")}</span>
+          </a>
         </li>
         <li className={`mr10  ${styles.buttonMenu}`}>
-          <ClipboardIcon className={`${styles.customClass}`} component="span">
+          <div className={`${styles.customClass}`}>
+            <FontAwesomeIcon icon={faBriefcase} />
             <a href="/#exp" className={`${scrolled ? styles.scrolled : ""}`}>
               <span> {t("experiences")}</span>
             </a>
-          </ClipboardIcon>
+          </div>
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
-          <BriefcaseIcon component="span">
-            <a
-              href="/#works"
-              className={`${scrolled ? styles.scrolled : ""}`}
-            >
-              <span> {t("works")}</span>
-            </a>
-          </BriefcaseIcon>
+          <FontAwesomeIcon icon={faHandshake} />
+          <a href="/#works" className={`${scrolled ? styles.scrolled : ""}`}>
+            <span> {t("works")}</span>
+          </a>
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
-          <EnvelopeIcon component="span">
-            <a
-              href="/#contact"
-              className={`${scrolled ? styles.scrolled : ""}`}
-            >
-              <span> {t("contact")}</span>
-            </a>
-          </EnvelopeIcon>
+          <FontAwesomeIcon icon={faEnvelope} />
+          <a href="/#contact" className={`${scrolled ? styles.scrolled : ""}`}>
+            <span> {t("contact")}</span>
+          </a>
         </li>
-        <li>
-          <a onClick={() => i18n.changeLanguage("en")}>
+        <li className="df fr">
+          <div onClick={() => i18n.changeLanguage("en")}>
             <img src={en} alt="change language english"></img>
-          </a>
-          <a onClick={() => i18n.changeLanguage("fr")}>
+          </div>
+          <div onClick={() => i18n.changeLanguage("fr")}>
             <img src={fr} alt="change language français"></img>
-          </a>
+          </div>
         </li>
       </ul>
       <section className="df jcfe">
@@ -113,18 +102,18 @@ export default function Header() {
         </div>
 
         {!showIcon && (
-          <div className={`${styles.listIconMobileMenu} mt10`}>
-            <AngleDoubleDownIcon component="span" onClick={handleClick}>
-              <span></span>
-            </AngleDoubleDownIcon>
+          <div className={`${styles.listIconMobileMenu} aic mb5`}>
+            <div onClick={handleClick}>
+              <FontAwesomeIcon icon={faAnglesDown} />
+            </div>
           </div>
         )}
 
         {showIcon && (
-          <div className={`${styles.listIconMobileMenu} mt10`}>
-            <AngleDoubleUpIcon component="span" onClick={handleClick}>
-              <span></span>
-            </AngleDoubleUpIcon>
+          <div className={`${styles.listIconMobileMenu} aic`}>
+            <div onClick={handleClick}>
+              <FontAwesomeIcon icon={faAnglesUp} />
+            </div>
           </div>
         )}
       </section>

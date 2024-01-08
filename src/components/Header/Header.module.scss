@@ -39,10 +39,13 @@
                 &.scrolled {
                     color: var(--bc);
                 }
+                span{
+                    font-size: 14px;
+                }
             }
         }
 
-        a img {
+        div img {
             cursor: pointer;
             width: 30px;
             margin: 5px;

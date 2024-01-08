@@ -1,20 +1,30 @@
-.navMobile{
-    
-    .buttonMobileMenu{
+.navMobile {
+
+    .buttonMobileMenu {
         cursor: pointer;
-        a{
+
+        a {
             text-decoration: none;
             color: var(--primary);
             font-size: 2rem;
-            &:hover{
+
+            &:hover {
                 opacity: 0.5;
             }
         }
     }
-    img{
+
+    img {
         width: 25px;
         margin: 5px;
         cursor: pointer;
         margin-top: 10px;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    li button {
+        text-decoration: none;
     }
 }

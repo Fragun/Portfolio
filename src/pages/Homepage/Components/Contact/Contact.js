@@ -43,10 +43,10 @@ export default function Contact() {
       };
 
       await emailjs.send(
-        process.env.SERVICE_API_KEY,
-        process.env.TEMPLATE_ID,
+        process.env.REACT_APP_SERVICE_API_KEY,
+        process.env.REACT_APP_TEMPLATE_ID,
         emailjsParams,
-        process.env.USER_ID,
+        process.env.REACT_APP_USER_ID,
       );
 
       console.log('E-mail envoyé avec succès');

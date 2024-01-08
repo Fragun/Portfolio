@@ -1,6 +1,7 @@
 {
   "about": "À PROPOS",
-  "contact": "CONTACTEZ-MOI",
+  "contact": "CONTACT",
+  "experiences" : "EXPÉRIENCES",
   "personalResume": "CV",
   "training": "FORMATIONS",
   "works": "TRAVAUX",
@@ -27,7 +28,7 @@
   
   "worksTitle" : "TRAVAUX",
 
-  "ExperiencesTitle" : "EXPERIENCES",
+  "experiencesTitle" : "EXPÉRIENCES",
 
   "contactTitle" : "CONTACT"
 }

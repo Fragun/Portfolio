@@ -1,5 +1,4 @@
 import AboutMe from "./Components/AboutMe/AboutMe";
-import photo from "../../assets/image/photoDavidtr-removebg-preview2.png";
 import styles from "./Homepage.module.scss";
 import { useTranslation } from "react-i18next";
 import Education from "./Components/Education/Education";

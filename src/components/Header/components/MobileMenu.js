@@ -1,12 +1,14 @@
 import styles from "./MobileMenu.module.scss";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  BriefcaseIcon,
-  ClipboardIcon,
-  EnvelopeIcon,
-  GraduationCapIcon,
-  MaleIcon,
-} from "react-line-awesome";
+  faCoffee,
+  faHandshake,
+  faEnvelope,
+  faGraduationCap,
+  faBriefcase,
+  faAnglesDown,
+} from "@fortawesome/free-solid-svg-icons";
 import en from "../../../assets/image/united-kingdom.png";
 import fr from "../../../assets/image/france.png";
 import { useTranslation } from "react-i18next";
@@ -16,42 +18,46 @@ export default function MobileMenu() {
 
   return (
     <nav className={`${styles.navMobile} `}>
-      <ul className={`df jce aie`}>
-        <li className={`mr10 ${styles.buttonMobileMenu}`}>
+      <ul className={`df jce aic`}>
+        <li className={`${styles.buttonMobileMenu}`}>
           <a href="/#about" className={``}>
-            <MaleIcon component="span"></MaleIcon>
+            <FontAwesomeIcon icon={faCoffee} />
           </a>
         </li>
         <li className={`mr10  ${styles.buttonMobileMenu}`}>
-          <a href="/#cv" className={``}>
-            <ClipboardIcon
-              className={`${styles.customClass}`}
-              component="span"
-            ></ClipboardIcon>{" "}
+          {/* <a href="/#cv" className={``}>
+          </a> */}
+        </li>
+        <li className={`mr10 ${styles.buttonMobileMenu}`}>
+          <a href="/#studies" className={``}>
+            <FontAwesomeIcon icon={faGraduationCap} />
+          </a>
+        </li>
+
+        <li className={`mr10 ${styles.buttonMobileMenu}`}>
+          <a href="/#studies" className={``}>
+            <FontAwesomeIcon icon={faHandshake} />
           </a>
         </li>
         <li className={`mr10 ${styles.buttonMobileMenu}`}>
           <a href="/#studies" className={``}>
-            <GraduationCapIcon component="span"></GraduationCapIcon>
+            <FontAwesomeIcon icon={faBriefcase} />
           </a>
         </li>
         <li className={`mr10 ${styles.buttonMobileMenu}`}>
-          <a href="/#studies" className={``}>
-            <BriefcaseIcon component="span"></BriefcaseIcon>
-          </a>
-        </li>
-        <li className={`mr10 ${styles.buttonMobileMenu}`}>
-          <a href="/#studies" className={``}>
-            <EnvelopeIcon component="span"></EnvelopeIcon>
+          <a href="/#contact" className={``}>
+          <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </li>
         <li>
-          <a onClick={() => i18n.changeLanguage("en")}>
+          <div className="df jcc aic">
+          <div onClick={() => i18n.changeLanguage("en")}>
             <img src={en} alt="change language english"></img>
-          </a>
-          <a onClick={() => i18n.changeLanguage("fr")}>
+          </div>
+          <div onClick={() => i18n.changeLanguage("fr")}>
             <img src={fr} alt="change language français"></img>
-          </a>
+          </div>
+          </div>
         </li>
       </ul>
     </nav>

@@ -26,29 +26,30 @@ export default function Education() {
   const [hasAnimated5, setHasAnimated5] = useState(false);
   const [hiddenContainer, setHiddenContainer] = useState(false);
 
-  const handleAnimation = () => {
-    if (isBoxVisible && !hasAnimated) {
-      setHasAnimated(true);
-    }
-    if (isBox2Visible && !hasAnimated2) {
-      setHasAnimated2(true);
-    }
-    if (isBox3Visible && !hasAnimated3) {
-      setHasAnimated3(true);
-    }
-    if (isBox4Visible && !hasAnimated4) {
-      setHasAnimated4(true);
-    }
-    if (isBox5Visible && !hasAnimated5) {
-      setHasAnimated5(true);
-    }
-  };
+ 
 
   const handleClickTitle = () => {
     setHiddenContainer(!hiddenContainer)
   }
 
   useEffect(() => {
+    const handleAnimation = () => {
+      if (isBoxVisible && !hasAnimated) {
+        setHasAnimated(true);
+      }
+      if (isBox2Visible && !hasAnimated2) {
+        setHasAnimated2(true);
+      }
+      if (isBox3Visible && !hasAnimated3) {
+        setHasAnimated3(true);
+      }
+      if (isBox4Visible && !hasAnimated4) {
+        setHasAnimated4(true);
+      }
+      if (isBox5Visible && !hasAnimated5) {
+        setHasAnimated5(true);
+      }
+    };
     window.addEventListener("scroll", handleAnimation);
     return () => {
       window.removeEventListener("scroll", handleAnimation);
