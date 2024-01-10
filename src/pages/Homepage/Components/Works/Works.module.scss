@@ -2,6 +2,7 @@
 
 
 .containerWorks {
+    background-color: var(--gray-1);
 
     .hiddenContainer {
         display: none;
@@ -9,7 +10,6 @@
 
     h2 {
         text-align: center;
-        margin-top: 20px;
         padding: 30px 0;
         background-color: var(--bc2);
         color: var(--primary);
@@ -26,6 +26,7 @@
 
 
     .grid {
+        
         display: grid;
         place-content: center;
         grid-template-columns: repeat(3, 350px);
@@ -33,6 +34,7 @@
         gap: 20px;
         font-family: var(--ff7);
         color: var(--secundary);
+        padding-bottom: 20px;
 
         @include mixin.lg-lt {
             grid-template-columns: repeat(2, 350px);
@@ -50,17 +52,17 @@
         }
 
         h3 {
-
-            font-size: 30px;
+            font-size: 25px;
+            color: var(--secundary);
             @include mixin.xs {
-                font-size: 25px;
+                font-size: 20px;
             }
         }
 
         p {
-            font-size: 20px;
+            font-size: 18px;
             @include mixin.xs {
-                font-size: 15px;
+                font-size: 12px;
             }
         }
 
@@ -69,7 +71,7 @@
             height: 250px;
 
             &:hover {
-                transform: scale(1.5);
+                transform: scale(1.2);
             }
         }
 
@@ -83,6 +85,7 @@
             box-shadow: var(--box-shadow);
             border-radius: 20px;
             padding: 5px;
+            background-color: var(--bc3);
         }
     }
 }

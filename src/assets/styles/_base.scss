@@ -7,7 +7,7 @@
 body{
     color: var(--text-color);
     margin: 0;
-    font-family: var(--font-family);
+    font-family: var(--font-family2);
 }
 
 h1, h2, h3 {
@@ -17,22 +17,35 @@ h1, h2, h3 {
 h1{
     font-size : 30px;
     @include mixin.md-lt {
-        font-size: 25px;
+        font-size: 28px;
     }
     @include mixin.sm {
-        font-size: 23px;
+        font-size: 26px;
     }
     @include mixin.xs {
-        font-size: 20px;
+        font-size: 22px;
     }
 }
 h2{
     font-size: 30px;
     @include mixin.sm {
-        font-size: 24px;
+        font-size: 26px;
     }
     @include mixin.xs {
-        font-size: 24px;
+        font-size: 18px;
+    }
+}
+
+h3{
+    font-size: 20px;
+    @include mixin.md-lt {
+        font-size: 18px;
+    }
+    @include mixin.sm {
+        font-size: 16px;
+    }
+    @include mixin.xs {
+        font-size: 12px;
     }
 }
 

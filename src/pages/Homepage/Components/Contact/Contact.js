@@ -6,19 +6,22 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import Wysiwyg from "./components/Wysiwyg";
+import Alert from "../../../../components/Header/components/Alert/Alert";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
   const { t } = useTranslation();
   const [hiddenContainer, setHiddenContainer] = useState(false);
   const [editorContent, setEditorContent] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
   console.log(editorContent);
 
   const schemaYup = Yup.object().shape({
     email: Yup.string()
       .email("Adresse e-mail invalide")
       .required("L'adresse e-mail est requise"),
-      //message: Yup.string().required("Le message est requis"),
-      message: Yup.string().default(() => editorContent),
+    message: Yup.string().default(() => editorContent),
   });
 
   const initialValues = {
@@ -45,17 +48,17 @@ export default function Contact() {
         to_email: "dethoordavid@gmail.com",
         email: data.email,
         message: data.message,
-        
       };
 
       await emailjs.send(
-        process.env.REACT_APP_SERVICE_API_KEY,
-        process.env.REACT_APP_TEMPLATE_ID,
+        "service_dvkjfqv",
+        "template_lv3bwng",
         emailjsParams,
-        process.env.REACT_APP_USER_ID,
+        "vCYBhPkyraDTZZZ_G"
       );
 
       console.log("E-mail envoyé avec succès");
+      setShowAlert(!showAlert);
     } catch (error) {
       console.error("Erreur lors de l'envoi de l'e-mail", error);
       setError("generic", {
@@ -78,6 +81,10 @@ export default function Contact() {
     setHiddenContainer(!hiddenContainer);
   };
 
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
+
   return (
     <>
       <h2
@@ -93,18 +100,23 @@ export default function Contact() {
           hiddenContainer ? "" : styles.hiddenContainer
         }`}
       >
-        <form onSubmit={submit}>
-          <label>
-            Email:
-            <input {...register("email")} />
-            {errors.email && <div>{errors.email.message}</div>}
-          </label>
-          <label>
+        {!showAlert && (
+          <form onSubmit={submit}>
+            <div className={`${styles.titleMail} df jcc`}>
+              <h3 className="mr10">M<FontAwesomeIcon icon={faAt} className={`${styles.iconMail}`}/>il :</h3>
+              <input {...register("email")} />
+              {errors.email && <div>{errors.email.message}</div>}
+            </div>
+
             <Wysiwyg setEditorContent={handleEditorChange} />
             {errors?.message && <div>{errors.message.message}</div>}
-          </label>
-          <button disabled={isSubmitting}>Envoyer</button>
-        </form>
+            <div className="df jcc"><button className={`btn ${styles.sendButton}`} disabled={isSubmitting}>Envoyer</button></div>
+          </form>
+        )}
+
+        {showAlert && (
+          <Alert message="Mail envoyé avec succès" onClose={closeAlert} />
+        )}
       </article>
     </>
   );

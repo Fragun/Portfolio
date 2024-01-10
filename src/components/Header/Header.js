@@ -57,7 +57,7 @@ export default function Header() {
       <ul className={`${styles.desktopHeader}  df jce aic`}>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faCoffee} />
-          <a href="/#about" className={`${scrolled ? styles.scrolled : ""}`}>
+          <a href="/#about" className={`${scrolled ? styles.scrolled : ""}`} onClick={handleClick}>
             <span> {t("about")}</span>
           </a>
         </li>

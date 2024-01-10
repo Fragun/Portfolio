@@ -10,9 +10,34 @@
     line-height: 1.8;
 }
 
+
+.titleMail {
+    padding: 0.5rem 1rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px 10px 0 0;
+    background-color: var(--bc2);
+
+    h3{
+        color: var(--secundary);
+    }
+    input{
+        width: 50%;
+    }
+    .iconMail{
+        color: var(--primary);
+    }
+}
+
+.sendButton{
+    background-color: var(--bc2);
+    border-radius: 0 0 30px 30px;
+    padding: 0.4rem 2rem 1rem  2rem ;
+    font-size: 18px;
+    font-family: var(--font-family2);
+}
+
 .title {
     text-align: center;
-    margin-top: 20px;
     padding: 30px 0;
     background-color: var(--bc2);
     box-shadow: var(--box-shadow);

@@ -1,11 +1,18 @@
-.footer{
-    background-color: var(--background-color);
+.footer {
+    background-color: var(--bc);
     box-shadow: var(--box-shadow2);
     color: var(--text-color);
 
-    
 
-    p{
-        text-decoration: none;
+
+    p {
+        
+        color: var(--primary);
+        a {
+            font-size: 10px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
     }
 }
