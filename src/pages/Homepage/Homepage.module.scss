@@ -7,16 +7,20 @@
   background-color: var(--bc);
   font-family: var(--ff3);
 
-  .presentation{
-margin-left: 15%;
+  .presentation {
+    @include mixin.sm-lt {
+      margin-left: 15%;
+    }
   }
 
   .firstname {
     color: var(--primary);
     font-size: 30px;
-    @include mixin.xs {
+
+    @include mixin.sm-lt {
       font-size: 20px;
-  }
+    }
+
     line-height: 20px;
     padding: 5px;
     font-weight: 500;
@@ -25,9 +29,11 @@ margin-left: 15%;
   .name {
     color: var(--primary);
     font-size: 56px;
-    @include mixin.xs {
-      font-size: 40px;
-  }
+
+    @include mixin.sm-lt {
+      font-size: 30px;
+    }
+
     line-height: 40px;
     padding: 5px;
     font-weight: 500;
