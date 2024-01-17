@@ -12,10 +12,8 @@ import { faAt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
   const { t } = useTranslation();
-  const [hiddenContainer, setHiddenContainer] = useState(false);
   const [editorContent, setEditorContent] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  console.log(editorContent);
 
   const schemaYup = Yup.object().shape({
     email: Yup.string()
@@ -77,9 +75,6 @@ export default function Contact() {
    * Permet de cacher tout l'onglet contact lors du clique
    *
    */
-  const handleClickContainerHidden = () => {
-    setHiddenContainer(!hiddenContainer);
-  };
 
   const closeAlert = () => {
     setShowAlert(false);
@@ -87,18 +82,14 @@ export default function Contact() {
 
   return (
     <>
+    
       <h2
         className={`${styles.title}`}
-        onClick={() => {
-          handleClickContainerHidden();
-        }}
       >
         {t("contactTitle")}
       </h2>
       <article
-        className={`${styles.containerContact} ${
-          hiddenContainer ? "" : styles.hiddenContainer
-        }`}
+        className={`${styles.containerContact}`}
       >
         {!showAlert && (
           <form onSubmit={submit}>

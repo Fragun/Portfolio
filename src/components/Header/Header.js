@@ -1,5 +1,5 @@
 import styles from "./Header.module.scss";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext} from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,6 +14,7 @@ import {
 import en from "../../assets/image/united-kingdom.png";
 import fr from "../../assets/image/france.png";
 import MobileMenu from "./components/MobileMenu";
+import { AppContext } from "../../context/Context";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -21,6 +22,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [count, setCount] = useState(0);
   const [showIcon, setShowIcon] = useState(false);
+  const {handleClickContainerHiddenContact, handleClickContainerHiddenAboutMe, handleClickTitleEducation, handleClickContainerExperience, handleClickHiddenContainerWorks} = useContext(AppContext);
 
   /**
    * écouteur d'évènement permettant d'obtenir la position du défilement vertical
@@ -57,33 +59,37 @@ export default function Header() {
       <ul className={`${styles.desktopHeader}  df jce aic`}>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faCoffee} />
-          <a href="/#about" className={`${scrolled ? styles.scrolled : ""}`} onClick={handleClick}>
+          <a
+            href="/#about"
+            className={`${scrolled ? styles.scrolled : ""}`}
+            onClick={handleClickContainerHiddenAboutMe}
+          >
             <span> {t("about")}</span>
           </a>
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faGraduationCap} />
-          <a href="/#training" className={`${scrolled ? styles.scrolled : ""}`}>
+          <a href="/#training" className={`${scrolled ? styles.scrolled : ""}`} onClick={handleClickTitleEducation}>
             <span> {t("training")}</span>
           </a>
         </li>
         <li className={`mr10  ${styles.buttonMenu}`}>
           <div className={`${styles.customClass}`}>
             <FontAwesomeIcon icon={faBriefcase} />
-            <a href="/#exp" className={`${scrolled ? styles.scrolled : ""}`}>
+            <a href="/#exp" className={`${scrolled ? styles.scrolled : ""}`} onClick={handleClickContainerExperience}>
               <span> {t("experiences")}</span>
             </a>
           </div>
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faHandshake} />
-          <a href="/#works" className={`${scrolled ? styles.scrolled : ""}`}>
+          <a href="/#works" className={`${scrolled ? styles.scrolled : ""}`} onClick={handleClickHiddenContainerWorks}>
             <span> {t("works")}</span>
           </a>
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faEnvelope} />
-          <a href="/#contact" className={`${scrolled ? styles.scrolled : ""}`}>
+          <a href="/#contact" className={`${scrolled ? styles.scrolled : ""}`}  onClick={handleClickContainerHiddenContact}>
             <span> {t("contact")}</span>
           </a>
         </li>

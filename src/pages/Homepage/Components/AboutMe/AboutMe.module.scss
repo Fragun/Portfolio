@@ -3,12 +3,13 @@
 }
 .container{
     background-color: var(--gray-1);
+    font-family: var(--ff5);
 }
 .containerAboutme {
     width: 50%;
     padding-top: 20px;
     margin: auto;
-    font-family: var(--font-family2);
+    
     line-height: 1.8;
 
     .buttonCv {
@@ -33,6 +34,6 @@
 
     &:hover {
         rotate: 1deg;
-        font-size: 45px;
+        font-size: 35px;
     }
 }

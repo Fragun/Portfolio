@@ -3,17 +3,15 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { ContentState, EditorState } from "draft-js";
 import styles from "./Wysiwyg.module.scss";
+import { useTranslation } from "react-i18next";
 
 export default function Wysiwyg({ setEditorContent }) {
-  const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromText("Votre message ici")));
+  const { t } = useTranslation();
+  const [editorState, setEditorState] = useState(EditorState.createWithContent(ContentState.createFromText(t("message"))));
   const [handleToolbar, setHandleToolbar] = useState("invisible");
-
+  
   const onEditorStateChange = (newEditorState) => {
-    if (newEditorState.getCurrentContent().getPlainText() === "Votre message ici") {
-      setEditorState(EditorState.createEmpty());
-    } else {
-      setEditorState(newEditorState);
-    }
+    setEditorState(newEditorState);
     setEditorContent(newEditorState.getCurrentContent().getPlainText());
   };
 

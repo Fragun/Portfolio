@@ -7,17 +7,17 @@ import merris from "../../../../assets/image/merris.jpg";
 import ferme from "../../../../assets/image/ferme.jpg";
 
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../../../context/Context";
 
 export default function Experiences() {
   const { t } = useTranslation();
   const [isclicked, setIsClicked] = useState(null);
-  const [hiddenContainer, setHiddenContainer] = useState(true);
+  const { handleClickContainerExperience, hiddenContainerExperience } =
+    useContext(AppContext);
+
   const handleClick = (id) => {
     setIsClicked(isclicked === id ? null : id);
-  };
-  const handleClickContainer = () => {
-    setHiddenContainer(!hiddenContainer);
   };
 
   return (
@@ -25,13 +25,15 @@ export default function Experiences() {
       <h2
         className={`${styles.title}`}
         onClick={() => {
-          handleClickContainer();
+          handleClickContainerExperience();
         }}
       >
         {t("experiencesTitle")}
       </h2>
       <div
-        className={` ${hiddenContainer === true ? styles.hiddenContainer : ""}`}
+        className={` ${
+          hiddenContainerExperience === true ? styles.hiddenContainer : ""
+        }`}
       >
         <div className={`${styles.gridExp}`}>
           <article
@@ -44,14 +46,11 @@ export default function Experiences() {
               className={`${isclicked === "three" ? styles.textEffect : ""}`}
             >
               <h3>
-                Eurofad
+                {t("eurofad")}
                 <br />
                 stagiaire
               </h3>
-              <p>
-                Développeur full-stack Symfony, refonte totale du site web selon
-                la maquette
-              </p>
+              <p>{t("pEurofad")}</p>
             </div>
           </article>
           <article
@@ -62,14 +61,11 @@ export default function Experiences() {
             <img src={ferme} alt="ferme"></img>
             <div className={`${isclicked === "one" ? styles.textEffect : ""}`}>
               <h3>
-                La ferme est dans le sac
+                {t("titleFerme")}
                 <br />
-                stagiaire
+                {t("contractFerme")}
               </h3>
-              <p>
-                Développeur front React et intégrateur Shopify durant 2 mois
-                dans le cadre de ma certification CDA
-              </p>
+              <p>{t("pFerme")}</p>
             </div>
           </article>
           <article
@@ -80,14 +76,11 @@ export default function Experiences() {
             <img src={brico} alt="Brico dépôt"></img>
             <div className={`${isclicked === "five" ? styles.textEffect : ""}`}>
               <h3>
-                Brico dépôt
+                {t("titleBrico")}
                 <br />
-                CDI
+                {t("contractBrico")}
               </h3>
-              <p>
-                Vendeur technique en Peinture et bricolage, gestion du rayon,
-                vente
-              </p>
+              <p>{t("pBrico")}</p>
             </div>
           </article>
           <article
@@ -98,14 +91,11 @@ export default function Experiences() {
             <img src={merris} alt="Merris Hydraulique"></img>
             <div className={`${isclicked === "two" ? styles.textEffect : ""}`}>
               <h3>
-                Merris Hydraulique
+                {t("titleMerris")}
                 <br />
-                CDI
+                {t("contractMerris")}
               </h3>
-              <p>
-                Magasinier, carriste, préparateur de commande, livreur et
-                commercial
-              </p>
+              <p>{t("pMerris")}</p>
             </div>
           </article>
           <div className={`${styles.containerArrow}`}>
@@ -123,14 +113,11 @@ export default function Experiences() {
             <img src={aerol} alt="aerol"></img>
             <div className={`${isclicked === "four" ? styles.textEffect : ""}`}>
               <h3>
-                Aerol
+                {t("titleAEROL")}
                 <br />
-                CDI
+                {t("contractAEROL")}
               </h3>
-              <p>
-                Commercial, vente au particulier d'équipement technique pour
-                l'amélioration du domicile
-              </p>
+              <p>{t("pAEROL")}</p>
             </div>
           </article>
         </div>

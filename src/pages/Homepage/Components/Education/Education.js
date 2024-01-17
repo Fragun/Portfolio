@@ -1,17 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import styles from "./Education.module.scss";
 import useOnScreen from "../../../../components/Hook/useOnScreen";
 import { useTranslation } from "react-i18next";
+import { AppContext } from "../../../../context/Context";
 
 export default function Education() {
   const { t } = useTranslation();
+
   const boxRef = useRef(null);
   const isBoxVisible = useOnScreen(boxRef);
-  //console.log('==================isBoxVisible==================');
-  //console.log(isBoxVisible);
-  //console.log('=================hasAnimated===================');
   const [hasAnimated, setHasAnimated] = useState(false);
-  //console.log(hasAnimated);
   const box2Ref = useRef(null);
   const isBox2Visible = useOnScreen(box2Ref);
   const [hasAnimated2, setHasAnimated2] = useState(false);
@@ -24,13 +22,8 @@ export default function Education() {
   const box5Ref = useRef(null);
   const isBox5Visible = useOnScreen(box5Ref);
   const [hasAnimated5, setHasAnimated5] = useState(false);
-  const [hiddenContainer, setHiddenContainer] = useState(false);
-
- 
-
-  const handleClickTitle = () => {
-    setHiddenContainer(!hiddenContainer)
-  }
+  const { handleClickTitleEducation, hiddenContainerEducation } =
+    useContext(AppContext);
 
   useEffect(() => {
     const handleAnimation = () => {
@@ -57,9 +50,16 @@ export default function Education() {
   }, [hasAnimated, hasAnimated2, hasAnimated3, hasAnimated4, hasAnimated5]);
 
   return (
-    <div className={`${styles.containerEducation}`} onClick={() => {handleClickTitle()}}>
+    <div
+      className={`${styles.containerEducation}`}
+      onClick={handleClickTitleEducation}
+    >
       <h2>{t("trainingTitle")}</h2>
-      <div className={`${styles.timelineBox} ${hiddenContainer ? "" : styles.hiddenContainer}`}>
+      <div
+        className={`${styles.timelineBox} ${
+          hiddenContainerEducation ? "" : styles.hiddenContainer
+        }`}
+      >
         <div className={`${styles.line}`}></div>
         <div className={`${styles.circle} ${styles.c1}`}>
           <span
@@ -110,46 +110,24 @@ export default function Education() {
           </span>
         </div>
         <div className={`${styles.box} ${styles.b1} `}>
-          <h3>Mastère Expert en ingénierie logicielle niveau 7 RNCP</h3>
-          <p>
-            Alternance 4/5 jours d'entreprise. Utilisation avancé de github et
-            gitlab · méthodologie scrum · Javascript · Typescript · Angular ·
-            Java, spring · hibernate · docker · kubernetes · Kotlin · API REST
-            avec Spring Boot · SOLID · UML · Java · Scala · noSql · test
-            d’application et machine learning.
-          </p>
+          <h3>{t("titleMaster")}</h3>
+          <p>{t("pMaster")}</p>
         </div>
         <div className={`${styles.box} ${styles.b2}`}>
-          <h3>
-            Certification Concepteur développeur d'application niveau 6 RNCP
-          </h3>
-          <p>
-            React · Express · Node.js · HTML · CSS · Git · Github · Gitlab ·
-            Firebase, Heroku · API Google · Api REST · AWS
-          </p>
+          <h3>{t("titleCda")}</h3>
+          <p>{t("pCda")}</p>
         </div>
         <div className={`${styles.box} ${styles.b3}`}>
-          <h3>Certification développeur web et web mobile niveau 5 RNCP</h3>
-          <p>
-            GitHub · WordPress · Git · SQL · PhpMyAdmin · API REST · Angular ·
-            Framework Symfony · JavaScript · Feuilles de style en cascade (CSS)
-            · HTML5 · PHP
-          </p>
+          <h3>{t("titleDwwm")}</h3>
+          <p>{t("pDwwm")}</p>
         </div>
         <div className={`${styles.box} ${styles.b4}`}>
-          <h3>D.U.T techniques de commercialisation</h3>
-          <p>
-            Marketing et Communication · Gestion Commerciale : Compétences en
-            gestion des ventes · analyse des performances commerciales · mise en
-            place de plans d'action pour atteindre les objectifs. Négociation et
-            Vente · techniques de vente · gestion de la relation client · Droit
-            Commercial · économie · gestion financière · Informatique :
-            Découverte de HTML4.
-          </p>
+          <h3>{t("titleDut")}</h3>
+          <p>{t("pDut")}</p>
         </div>
         <div className={`${styles.box} ${styles.b5}`}>
-          <h3>Bac Sciences et techniques de la gestion</h3>
-          <p>Spécialité Marketing</p>
+          <h3>{t("titleBac")}</h3>
+          <p>{t("pBac")}</p>
         </div>
 
         <div className={`${styles.date} ${styles.d1}`}>

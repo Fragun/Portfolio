@@ -1,13 +1,19 @@
+@use "../../../../assets/styles/mixins.scss" as mixin;
+
 .hiddenContainer {
     display: none;
 }
 
 .containerContact {
     width: 50%;
+    padding-bottom: 20px;
     padding-top: 20px;
     margin: auto;
     font-family: var(--font-family2);
     line-height: 1.8;
+    @include mixin.xs {
+        width: 80%;
+    }
 }
 
 
@@ -47,6 +53,6 @@
 
     &:hover {
         rotate: 1deg;
-        font-size: 45px;
+        font-size: 35px;
     }
 }

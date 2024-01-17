@@ -1,26 +1,24 @@
 import styles from "./AboutMe.module.scss";
 import MyCv from "../../../../components/CvComponent/MyCv";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { AppContext } from "../../../../context/Context";
 
 export default function AboutMe() {
   const [showCv, setShowCv] = useState(false);
   const { t } = useTranslation();
-  const [hiddenContainer, setHiddenContainer] = useState(false);
+  const { hiddenContainerAboutMe, handleClickContainerHiddenAboutMe } = useContext(AppContext);
 
   const handleClick = () => {
     setShowCv(!showCv);
   };
-  const handleClickContainerHidden = () => {
-    setHiddenContainer(!hiddenContainer);
-  };
-
+  
   return (
     <div>
       <h2
         className={`${styles.title}`}
         onClick={() => {
-          handleClickContainerHidden();
+          handleClickContainerHiddenAboutMe();
         }}
       >
         {t("aboutMe")}
@@ -28,7 +26,7 @@ export default function AboutMe() {
       <div className={`${styles.container}`}>
         <article
           className={`${styles.containerAboutme} ${
-            hiddenContainer ? "" : styles.hiddenContainer
+            hiddenContainerAboutMe ? "" : styles.hiddenContainer
           }`}
         >
           <p>{t("p1AboutMe")}</p>
@@ -52,10 +50,9 @@ export default function AboutMe() {
             </i>{" "}
           </p>
           {showCv && <MyCv />}
-          <p>
-            Je vous propose de me recontacter ici afin d’échanger sur cette
-            opportunité.
-          </p>
+          <a href="#contact">{t("p10AboutMe")}{" "}</a>
+          
+          
         </article>
       </div>
     </div>

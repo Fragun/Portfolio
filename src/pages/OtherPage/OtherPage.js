@@ -1,5 +1,6 @@
 export default function OtherPage() {
+    return(
     <>
-    <p>Connexion</p>
-    </>
+    <p>page secrète</p>
+    </>)
 }

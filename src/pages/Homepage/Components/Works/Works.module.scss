@@ -19,7 +19,7 @@
 
         &:hover {
             rotate: 1deg;
-            font-size: 45px;
+            font-size: 35px;
         }
     }
 
@@ -49,6 +49,7 @@
         @include mixin.xs {
             grid-template-columns: 1fr;
             grid-auto-columns: 1fr;
+            margin: 0 50px;
         }
 
         h3 {
@@ -85,7 +86,7 @@
             box-shadow: var(--box-shadow);
             border-radius: 20px;
             padding: 5px;
-            background-color: var(--bc3);
+            background-color: var(--bc4);
         }
     }
 }

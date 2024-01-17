@@ -1,11 +1,8 @@
-// useOnScreen.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function useOnScreen(ref) {
   const [isIntersecting, setIntersecting] = useState(false);
-console.log('====================================');
-console.log(isIntersecting);
-console.log('====================================');
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

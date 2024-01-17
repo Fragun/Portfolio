@@ -7,7 +7,6 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // loader: rootLoader,
     children: [
       {
         index: true,
@@ -16,7 +15,6 @@ export const router = createBrowserRouter([
       {
         path: "/otherPage",
         element: <OtherPage />,
-        // loader: teamLoader,
       },
     ],
   },

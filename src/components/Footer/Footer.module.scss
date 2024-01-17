@@ -1,3 +1,5 @@
+@use '../../assets/styles/mixins' as mixin;
+
 .footer {
     background-color: var(--bc);
     box-shadow: var(--box-shadow2);
@@ -6,8 +8,14 @@
 
 
     p {
-        
         color: var(--primary);
+        @include mixin.xs {
+            font-size: 10px;
+        }
+        @include mixin.sm {
+            font-size: 12px;
+        }
+
         a {
             font-size: 10px;
             text-decoration: none;
