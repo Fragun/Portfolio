@@ -7,7 +7,7 @@ import { AppContext } from "../../../../context/Context";
 export default function AboutMe() {
   const [showCv, setShowCv] = useState(false);
   const { t } = useTranslation();
-  const { hiddenContainerAboutMe, handleClickContainerHiddenAboutMe } = useContext(AppContext);
+  const { hiddenContainerAboutMe, handleClickTitleAboutMe } = useContext(AppContext);
 
   const handleClick = () => {
     setShowCv(!showCv);
@@ -18,7 +18,7 @@ export default function AboutMe() {
       <h2
         className={`${styles.title}`}
         onClick={() => {
-          handleClickContainerHiddenAboutMe();
+          handleClickTitleAboutMe();
         }}
       >
         {t("aboutMe")}

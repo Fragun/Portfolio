@@ -13,7 +13,7 @@ import { AppContext } from "../../../../context/Context";
 export default function Experiences() {
   const { t } = useTranslation();
   const [isclicked, setIsClicked] = useState(null);
-  const { handleClickContainerExperience, hiddenContainerExperience } =
+  const { handleClickTitleExp, hiddenContainerExperience } =
     useContext(AppContext);
 
   const handleClick = (id) => {
@@ -25,7 +25,7 @@ export default function Experiences() {
       <h2
         className={`${styles.title}`}
         onClick={() => {
-          handleClickContainerExperience();
+          handleClickTitleExp();
         }}
       >
         {t("experiencesTitle")}

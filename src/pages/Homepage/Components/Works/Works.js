@@ -6,13 +6,13 @@ import { AppContext } from "../../../../context/Context";
 
 export default function Works() {
   const { t } = useTranslation();
-  const {hiddenContainerWorks, handleClickHiddenContainerWorks} = useContext(AppContext);
+  const {hiddenContainerWorks, handleClickTitleWorks} = useContext(AppContext);
 
   return (
     <div className={`${styles.containerWorks}`}>
       <h2
         onClick={() => {
-          handleClickHiddenContainerWorks();
+          handleClickTitleWorks();
         }}
       >
         {t("worksTitle")} 

@@ -2,11 +2,14 @@
 
     .buttonMobileMenu {
         cursor: pointer;
-
+margin-right: 10px;
         a {
             text-decoration: none;
             color: var(--primary);
             font-size: 2rem;
+            @media (max-width: 375px) {
+                font-size: 1.5rem;
+              }
 
             &:hover {
                 opacity: 0.5;

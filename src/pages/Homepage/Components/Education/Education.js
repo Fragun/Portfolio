@@ -22,7 +22,7 @@ export default function Education() {
   const box5Ref = useRef(null);
   const isBox5Visible = useOnScreen(box5Ref);
   const [hasAnimated5, setHasAnimated5] = useState(false);
-  const { handleClickTitleEducation, hiddenContainerEducation } =
+  const { handleTitleEducation, hiddenContainerEducation } =
     useContext(AppContext);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Education() {
   return (
     <div
       className={`${styles.containerEducation}`}
-      onClick={handleClickTitleEducation}
+      onClick={handleTitleEducation}
     >
       <h2>{t("trainingTitle")}</h2>
       <div

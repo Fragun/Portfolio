@@ -20,13 +20,6 @@ export default function Homepage() {
             <p className={`${styles.name}`}>{t("presentationName")}</p>
             <p className={`${styles.firstname}`}>{t("presentation2")}</p>
           </div>
-          <div className="df jcc aise">
-            <img
-              src=""
-              alt="Profil David Dethoor"
-              className={`${styles.imageRounded}`}
-            />
-          </div>
         </article>
       </header>
       <main>

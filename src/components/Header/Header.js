@@ -22,7 +22,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [count, setCount] = useState(0);
   const [showIcon, setShowIcon] = useState(false);
-  const {handleClickContainerHiddenContact, handleClickContainerHiddenAboutMe, handleClickTitleEducation, handleClickContainerExperience, handleClickHiddenContainerWorks} = useContext(AppContext);
+  const {handleClickContainerHiddenAboutMe, handleClickTitleEducation, handleClickContainerExperience, handleClickHiddenContainerWorks} = useContext(AppContext);
 
   /**
    * écouteur d'évènement permettant d'obtenir la position du défilement vertical
@@ -60,8 +60,8 @@ export default function Header() {
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faCoffee} />
           <a
+          className={`${scrolled ? styles.scrolled : ""}`}
             href="/#about"
-            className={`${scrolled ? styles.scrolled : ""}`}
             onClick={handleClickContainerHiddenAboutMe}
           >
             <span> {t("about")}</span>
@@ -89,7 +89,7 @@ export default function Header() {
         </li>
         <li className={`mr10 ${styles.buttonMenu}`}>
           <FontAwesomeIcon icon={faEnvelope} />
-          <a href="/#contact" className={`${scrolled ? styles.scrolled : ""}`}  onClick={handleClickContainerHiddenContact}>
+          <a href="/#contact" className={`${scrolled ? styles.scrolled : ""}`}>
             <span> {t("contact")}</span>
           </a>
         </li>
