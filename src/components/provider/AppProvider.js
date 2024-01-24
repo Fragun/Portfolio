@@ -14,12 +14,13 @@ export default function AppProvider({ children }) {
     setHiddenContainerWorks(!hiddenContainerWorks);
   };
   const handleClickHiddenContainerWorks = (event) => {
-    if (event) {
-      event.preventDefault();
-    }
     if (hiddenContainerWorks === false) {
       setHiddenContainerWorks(!hiddenContainerWorks);
     }
+    if (event) {
+      event.preventDefault();
+    }
+    
     const targetElement = document.querySelector("#works");
     if (targetElement) {
       const offset = targetElement.offsetTop;
@@ -34,13 +35,12 @@ export default function AppProvider({ children }) {
     setHiddenContainerExperience(!hiddenContainerExperience);
   };
   const handleClickContainerExperience = (event) => {
-    if (event) {
-      event.preventDefault();
-    }
     if (hiddenContainerExperience === true) {
       setHiddenContainerExperience(!hiddenContainerExperience);
     }
-
+    if (event) {
+      event.preventDefault();
+    }
     const targetElement = document.querySelector("#exp");
     if (targetElement) {
       const offset = targetElement.offsetTop;
