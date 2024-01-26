@@ -6,7 +6,11 @@
   height: 650px;
   background-color: var(--bc);
   font-family: var(--ff3);
-
+img{
+  @include mixin.sm-lt {
+    display: none;
+  }
+}
   .presentation {
     @include mixin.sm-lt {
       margin-left: 15%;

@@ -6,6 +6,7 @@ import Header from "../../components/Header/Header";
 import Experiences from "./Components/Experiences/Experiences";
 import Works from "./Components/Works/Works";
 import Contact from "./Components/Contact/Contact";
+import photoMoi from "../../assets/image/DavidD.png"
 
 export default function Homepage() {
   const { t } = useTranslation();
@@ -20,6 +21,7 @@ export default function Homepage() {
             <p className={`${styles.name}`}>{t("presentationName")}</p>
             <p className={`${styles.firstname}`}>{t("presentation2")}</p>
           </div>
+          <img src={photoMoi} alt="David Dethoor"></img>
         </article>
       </header>
       <main>
